@@ -1,10 +1,46 @@
 *{
     font-family: Verdana;
 }
+
 .rotuloAzul{
     background-color:cornflowerblue;
     text-align: center;
 }
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo{
+    width: 270px;
+    height: 60px;
+}
+h1{
+    
+    color: blueviolet
+}
+#sMais1, #sMais2, #sMais3, #sMais4, #sMais5, #sMais6, #sMais7 {
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+#sMenos{
+    width: 20px;
+    height: 20px;
+}
+
+#sMais1:hover, #sMais2:hover, #sMais3:hover, #sMais4:hover, #sMais5:hover, #sMais6:hover, #sMais7:hover{
+    cursor: pointer;
+}
+
+#ribsTd:hover img, #QdxTd:hover img, #cttPenTd:hover img, #rushTd:hover img, #bagsTd:hover img, #bdosTd:hover img, #ahlsTd:hover img{
+    display: inline;
+}
+
+#dpr, #ahl, #ohd{
+    width: 60px;
+}
+
 input,select,textarea{
     border-radius: 4px;
     padding: 5px;
@@ -60,10 +96,13 @@ h3{
 p{
     text-align: center;
 }
-h1{
-    color: blueviolet
-}
+
 .centralizar{
     
     text-align-last: center;
+}
+
+.fadeOut{
+	opacity: 0.5;
+	transition: 0.5s;
 }

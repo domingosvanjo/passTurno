@@ -1,35 +1,65 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="pt-br">
   <head>
      <title>Passagem de turno GYNLL</title>
      <meta charset="UTF-8">
-     <link href="css/passagemDeTurno.css" rel="stylesheet" type="text/css" />
-     
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="css/passagemDeTurno.css" rel="stylesheet" type="text/css"/>
+     <link href="img/malas.png" rel="icon" type="image/x-icon"/>
   </head>
 <body>
-   <h1>Passagem de turno GYNLL</h1>
-      
-   <p><a href="https://docs.google.com/spreadsheets/d/19-5MNR8ZN8WDTIKY-DkpnG9eV-ZhGlsRlBASuXOQzKY/edit#gid=2491524">
-   Verificar as informações do 4DX dos voos </a></p>
-   <p><a href="https://datastudio.google.com/u/0/reporting/1hOK8pAFeOqtK8ECBkcahUjLAJ6QQPkUZ/page/Mv1k">
-     Painel de bagagens Priority</a></p>
+   <header>
+      <div class="container">
+         <img class="logo" src="img/logo.png" alt="Logo da LATAM">
+         <h1>Passagem de turno GYNLL</h1>
+      </div>
+      <div class="links">
+         <p><a href="https://docs.google.com/spreadsheets/d/19-5MNR8ZN8WDTIKY-DkpnG9eV-ZhGlsRlBASuXOQzKY/edit#gid=2491524">
+            Verificar as informações do 4DX dos voos </a></p>
+            <p><a href="https://datastudio.google.com/u/0/reporting/1hOK8pAFeOqtK8ECBkcahUjLAJ6QQPkUZ/page/Mv1k">
+              Painel de bagagens Priority</a></p>
+      </div>
+   </header>
+   
+         
    <fieldset>   
-     <table border="0">
+     <table border="0" id="tab-pass">
       <tr class="rotuloAzul">
         <td><label for="data" id="lblData" >Data</label></td>
         <td><label for="turno" id="lblTurno">Turno</label></td>
-        <td colspan="3">
+        <td id="ribsTd" colspan="3">
             <label for="ribs" id="lblRibs" >RIBs abertos no turno</label><br/>
             <label for="dpr">DPR--------</label>
             <label for="ahl">AHL-------</label>
             <label for="ohd">OHD</label>
+            <img id="sMais1" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
          </td>
-        <td colspan="3"><label for="Qdx" id="lblVoos" >4DX enviados </br>dos voos</label></td>
-        <td colspan="2"><label for="cttPen" id="lblContatos" >Contatos<br/>pendentes</label></td>
-        <td><label for="rush" id="lblRush" >Rush p/ envio</label></td>
-        <td colspan="2"><label for="bags" id="lblBags" >Bags<br />sobrantes <br />TNs</label></td>
-        <td colspan="2"><label for="bdos" id="lblBdos" >BDOs para <br />LogsUP</label></td>
-        <td colspan="2"><label for="ahls" id="lblAhls">AHLs outras <br />empresas</label></td>
+        <td id="QdxTd" colspan="3">
+         <label for="Qdx" id="lblVoos" >4DX enviados </br>dos voos</label>
+         <img id="sMais2" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
+      </td>
+        <td id="cttPenTd" colspan="2">
+         <label for="cttPen" id="lblContatos" >Contatos<br/>pendentes</label>
+         <img id="sMais3" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
+      </td>
+        <td id="rushTd">
+         <label for="rush" id="lblRush" >Rush p/ envio</label>
+         <img id="sMais4" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
+      </td>
+        <td id="bagsTd" colspan="2">
+         <label for="bags" id="lblBags" >Bags<br />sobrantes <br />TNs</label>
+         <img id="sMais5" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
+      </td>
+        <td id="bdosTd" colspan="2">
+         <label for="bdos" id="lblBdos" >BDOs para <br />LogsUP</label>
+         <img id="sMais6" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
+      </td>
+        <td id="ahlsTd" colspan="2">
+         <label for="ahls" id="lblAhls">AHLs outras <br />empresas</label>
+         <img id="sMais7" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
+      </td>
         <td><label for="qcelular" id="lblQcelular">Qtd<br />celular<br /> GYNLL</label></td>
         <td><label for="qradios" id="lblQradios" >Qtd<br /> rádios</label></td>
       </tr>
@@ -45,9 +75,9 @@
         <td><input type="number" id="ahl" min="0" max="50000"></input></td>
         <td><input type="number" id="ohd" min="0" max="50000"></input></td>
              
-        <td><input type="text" name="Qdx1" id="Qdx" maxlength="4" placeholder="voo" required></input></td>
-        <td><input type="text" name="Qdx2" id="Qdx" maxlength="4" placeholder="voo" required></input></td>
-        <td><input type="text" name="Qdx3" id="Qdx" maxlength="4" placeholder="voo" required></input></td>
+        <td><input type="text" name="Qdx1" id="Qdx" maxlength="4" placeholder="voo"></input></td>
+        <td><input type="text" name="Qdx2" id="Qdx" maxlength="4" placeholder="voo"></input></td>
+        <td><input type="text" name="Qdx3" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
         <td><input type="text" name="cttPen1" id="cttPen" maxlength="10" placeholder="Nenhum"></input></td>
         <td><input type="text" name="cttPen2" id="cttPen" maxlength="10" placeholder="Nenhum"></input></td>
         <td><input type="text" name="rush" id="rush" placeholder="Nenhuma"></input></td>
@@ -60,6 +90,7 @@
         <td><input type="number" id="qcelular" min="1" max="1" value= "1" required></input></td>
         <td><input type="number" id="qradios" min="1" max="1" value="1" required></input></td>
       </tr>
+
       <tr class="centralizar">
          <td></td>
          <td></td>
@@ -67,9 +98,9 @@
          <td><input type="number" id="ahl" min="0" max="50000"></input></td>
          <td><input type="number" id="ohd" min="0" max="50000"></input></td>
                
-         <td><input type="text" name="Qdx4" id="Qdx" maxlength="4" placeholder="voo" required></input></td>
+         <td><input type="text" name="Qdx4" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
          <td><input type="text" name="Qdx5" id="Qdx" maxlength="4" placeholder="voo" required></input></td>
-         <td><input type="text" name="Qdx6" id="Qdx" maxlength="4" placeholder="voo" required></input></td>
+         <td><input type="text" name="Qdx6" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
          <td><input type="text" name="cttPen3" id="cttPen" maxlength="10" placeholder="Nenhum"></input></td>
          <td><input type="text" name="cttPen4" id="cttPen" maxlength="10" placeholder="Nenhum"></input></td>
          <td><input type="text" name="rush" id="rush" placeholder="Nenhuma"></input></td>
@@ -79,10 +110,30 @@
          <td><input type="text" name="bdos4" id="bdos" maxlength="10" placeholder="GRULA12345"></input></td>
          <td><input type="text" name="ahls3" id="ahls" maxlength="10" placeholder="Nenhuma"></input></td>
          <td><input type="text" name="ahls4" id="ahls" maxlength="10" placeholder="Nenhuma"></input></td>
-         <td><input type="number" id="qcelular" min="1" max="1" value= "1" required></input></td>
-         <td><input type="number" id="qradios" min="1" max="1" value="1" required></input></td>
+         
       </tr>
 
+      <tr class="centralizar">
+         <td></td>
+         <td></td>
+         <td><input type="number" id="dpr" min="0" max="50000"></input></td>
+         <td><input type="number" id="ahl" min="0" max="50000"></input></td>
+         <td><input type="number" id="ohd" min="0" max="50000"></input></td>
+               
+         <td><input type="text" name="Qdx4" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
+         <td><input type="text" name="Qdx5" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
+         <td><input type="text" name="Qdx6" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
+         <td><input type="text" name="cttPen3" id="cttPen" maxlength="10" placeholder="Nenhum"></input></td>
+         <td><input type="text" name="cttPen4" id="cttPen" maxlength="10" placeholder="Nenhum"></input></td>
+         <td><input type="text" name="rush" id="rush" placeholder="Nenhuma"></input></td>
+         <td><input type="text" name="bags3" id="bags" maxlength="8"></input></td>
+         <td><input type="text" name="bags4" id="bags" maxlength="8"></input></td>
+         <td><input type="text" name="bdos3" id="bdos" maxlength="10" placeholder="GYNLA12345"></input></td>
+         <td><input type="text" name="bdos4" id="bdos" maxlength="10" placeholder="GRULA12345"></input></td>
+         <td><input type="text" name="ahls3" id="ahls" maxlength="10" placeholder="Nenhuma"></input></td>
+         <td><input type="text" name="ahls4" id="ahls" maxlength="10" placeholder="Nenhuma"></input></td>
+       
+      </tr>
       
    </table>
 </fieldset>
@@ -208,5 +259,6 @@
       <!-- <script src="enviodeemail.js"></script> -->
      <script src="js/jquery.js"></script>
      <script src="js/principal.js"></script>
+     <script src="js/remover.js"></script>
 </body>
 </html>
