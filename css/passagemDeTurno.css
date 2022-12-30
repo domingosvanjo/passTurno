@@ -1,0 +1,69 @@
+*{
+    font-family: Verdana;
+}
+.rotuloAzul{
+    background-color:cornflowerblue;
+    text-align: center;
+}
+input,select,textarea{
+    border-radius: 4px;
+    padding: 5px;
+}
+fieldset{
+    width: 1365px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 8px gray;
+}
+
+#Qdx{
+    width: 35px;
+}
+
+#cttPen, #bdos, #ahls{
+    width: 90px;
+}
+
+#bags{
+    width: 75px;
+}
+
+.checList{
+    text-align: center;
+    font-weight: bold;
+  
+}
+#checklist{
+    width: 540px;
+    
+}
+h3{
+    text-align: center;
+    color: whitesmoke;
+    width: 535px;
+}
+#qtd00, #qtd5, #qtd{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 12pt;
+    text-align: center;
+    border-color: transparent;
+}
+#qtd2,#qtd2Corrig,#qtd3,#qtd3Corrig,#qtd4,#qtd4Corrig,#qtd6,#qtd6Corrig,#qtd7,#qtd7Corrig,#qtd8,#qtd8Corrig,#qtd9,#qtd9Corrig,#qtd10,#qtd10Corrig,#qtdCorrig{
+    text-align: center;
+    border-color: transparent;
+}
+#qtd11{
+    border-color: transparent;
+}
+p{
+    text-align: center;
+}
+h1{
+    color: blueviolet
+}
+.centralizar{
+    
+    text-align-last: center;
+}
