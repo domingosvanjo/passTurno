@@ -1,5 +1,5 @@
 
-var botaoRemover = document.querySelector("#sMenos");
+var botaoRemover = document.querySelector("#tab-pass");
 
 botaoRemover.addEventListener("click", function(event){
     var alvoEvento = event.target;
