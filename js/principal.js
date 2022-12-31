@@ -1,5 +1,6 @@
-var data = new Date();
+var linhas = 3;
 
+var data = new Date();
 var dataAtual = document.querySelector("#data");
 
 function formatDate(date, format) {
@@ -45,8 +46,8 @@ botaoAddLinha7.addEventListener("click", function(){
 })
 
 
-
 function adicionarTr(){
+    linhas += 1;
     var linha = montarTr();
     var tabela = document.querySelector("#tab-pass");
     tabela.appendChild(linha);
@@ -56,9 +57,8 @@ function montarTr(){
     var passTr = document.createElement("tr");
     passTr.classList.add("centralizar");
 
-    passTr.appendChild(montarTd1());
     
-    passTr.appendChild(montaTdImg("sMenos","sMenos", "img/menos.png", "Sinal de remover","Remover linha",));
+    passTr.appendChild(montaTdInpOcul("text", "oculto", "tru"));
     passTr.appendChild(montarTd("number", "dpr", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ahl", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ohd", "0","50000", ""));
@@ -77,22 +77,14 @@ function montarTr(){
 
     return passTr;
 }
-//<img id="sMais1" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
 
-function montarTd1(){
+function montaTdInpOcul(tipo, classe, disable){
     var td = document.createElement("td");
-    return td
-}
-
-function montaTdImg(classe, id, src, alt, title){
-    var td = document.createElement("td");
-    var img = document.createElement("img");
-    img.classList.add(classe);
-    img.id = id;
-    img.src = src;
-    img.alt = alt;
-    img.title = title;
-    td.appendChild(img);
+    var input = document.createElement("input");
+    input.classList.add(classe);
+    input.type = tipo;
+    input.disabled = disable;
+    td.appendChild(input);
     return td;
 }
 
@@ -113,3 +105,4 @@ function montaTag(tipo, id, min, maxlength, placeholder){
     input.placeholder = placeholder;
     return input;
 }
+

@@ -28,7 +28,11 @@ h1{
     width: 20px;
     height: 20px;
 }
-
+ .oculto{
+    border: none;
+    width: 188px;
+    
+ }
 #sMais1:hover, #sMais2:hover, #sMais3:hover, #sMais4:hover, #sMais5:hover, #sMais6:hover, #sMais7:hover{
     cursor: pointer;
 }

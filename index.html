@@ -25,14 +25,14 @@
    
          
    <fieldset>   
-     <table border="0" id="tab-pass">
+     <table border="0">
       <tr class="rotuloAzul">
         <td><label for="data" id="lblData" >Data</label></td>
         <td><label for="turno" id="lblTurno">Turno</label></td>
         <td id="ribsTd" colspan="3">
             <label for="ribs" id="lblRibs" >RIBs abertos no turno</label><br/>
-            <label for="dpr">DPR--------</label>
-            <label for="ahl">AHL-------</label>
+            <label for="dpr">DPR------</label>
+            <label for="ahl">AHL-----</label>
             <label for="ohd">OHD</label>
             <img id="sMais1" src="img/sinal-de-mais.png" alt="Sinal de mais" title="Adicionar linha.">
          </td>
@@ -112,10 +112,11 @@
          <td><input type="text" name="ahls4" id="ahls" maxlength="10" placeholder="Nenhuma"></input></td>
          
       </tr>
-
+     </table>
+     <table id="tab-pass">
       <tr class="centralizar">
-         <td></td>
-         <td><img class="sMenos" id="sMenos" src="img/menos.png" alt="Sinal de remover" title="Remover linha."></td>
+         <td><input type="text" disabled="true" class="oculto"> </td>
+         <!-- <td><img class="sMenos" id="sMenos" src="img/menos.png" alt="Sinal de remover" title="Remover linha."></td> -->
          <td><input type="number" id="dpr" min="0" max="50000"></input></td>
          <td><input type="number" id="ahl" min="0" max="50000"></input></td>
          <td><input type="number" id="ohd" min="0" max="50000"></input></td>
