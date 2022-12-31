@@ -58,7 +58,7 @@ function montarTr(){
 
     passTr.appendChild(montarTd1());
     
-    passTr.appendChild(montaTdImg("sMenos", "img/menos.png", "Sinal de remover","Remover linha",));
+    passTr.appendChild(montaTdImg("sMenos","sMenos", "img/menos.png", "Sinal de remover","Remover linha",));
     passTr.appendChild(montarTd("number", "dpr", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ahl", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ohd", "0","50000", ""));
@@ -84,9 +84,10 @@ function montarTd1(){
     return td
 }
 
-function montaTdImg(id, src, alt, title){
+function montaTdImg(classe, id, src, alt, title){
     var td = document.createElement("td");
     var img = document.createElement("img");
+    img.classList.add(classe);
     img.id = id;
     img.src = src;
     img.alt = alt;
