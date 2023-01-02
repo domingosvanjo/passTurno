@@ -58,7 +58,7 @@ function montarTr(){
     passTr.classList.add("centralizar");
 
     
-    passTr.appendChild(montaTdInpOcul("text", "oculto", "tru"));
+    passTr.appendChild(montaTdInpOcul("text", "oculto", "tru", "Clique duplo para excluir!"));
     passTr.appendChild(montarTd("number", "dpr", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ahl", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ohd", "0","50000", ""));
@@ -78,12 +78,13 @@ function montarTr(){
     return passTr;
 }
 
-function montaTdInpOcul(tipo, classe, disable){
+function montaTdInpOcul(tipo, classe, disable, placeholder){
     var td = document.createElement("td");
     var input = document.createElement("input");
     input.classList.add(classe);
     input.type = tipo;
     input.disabled = disable;
+    input.placeholder = placeholder;
     td.appendChild(input);
     return td;
 }
