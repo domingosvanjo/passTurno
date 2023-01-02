@@ -1,5 +1,3 @@
-var linhas = 3;
-
 var data = new Date();
 var dataAtual = document.querySelector("#data");
 
@@ -107,3 +105,17 @@ function montaTag(tipo, id, min, maxlength, placeholder){
     return input;
 }
 
+var checkBoxA = document.querySelector("#autCh");
+var textAreaA = document.querySelector("#aut");
+
+checkBoxA.addEventListener("click", function(){
+    if(checkBoxA){
+        textAreaA.disabled = false;
+        textAreaA.placeholder = "Informe o assunto do e-mail aqui";
+        textAreaA.requerid = true;
+    }else{
+        textAreaA.disabled = true;
+        textAreaA.placeholder = "";
+        textAreaA.textContent = "";
+    }
+})

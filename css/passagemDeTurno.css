@@ -37,6 +37,7 @@ h1{
     cursor: pointer;
 }
 
+
 #ribsTd:hover img, #QdxTd:hover img, #cttPenTd:hover img, #rushTd:hover img, #bagsTd:hover img, #bdosTd:hover img, #ahlsTd:hover img{
     display: inline;
 }
