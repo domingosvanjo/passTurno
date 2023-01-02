@@ -7,6 +7,8 @@ botaoRemover.addEventListener("dblclick", function(event){
     var avoDoAlvo = paiDoAlvo.parentNode;
     paiDoAlvo.parentNode.classList.add("fadeOut");
     alert(avoDoAlvo);
+    
+    if(avoDoAlvo != object HTMLTableRowElement) return;
     setTimeout(function(){
         avoDoAlvo.remove();
     },500);
