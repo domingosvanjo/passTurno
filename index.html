@@ -143,28 +143,28 @@
    <table border="0">
       <tr>
         <td><label for="aut" id="lblAut" >Autorização pendente da supervisão:</label></td>
-        <td><input type="checkbox" name="aut" id="aut" value="A"></input></td>
-	   <td><textarea name="aut" id="aut" rows="1" cols="125" ></textarea></td>
+        <td><input type="checkbox" name="aut" id="autCh" value="A"></input></td>
+	   <td><textarea name="aut" id="aut" rows="1" cols="125" disable="true" ></textarea></td>
       </tr>
       <tr>
         <td><label for="fale" id="lblFale">Fale pendente de resposta:</label></td>
-        <td><input type="checkbox" name="fale" id="fale" value="F"></input></td>
-	   <td><textarea name="fale" id="fale" rows="1" cols="125" ></textarea></td>
+        <td><input type="checkbox" name="fale" id="faleCh" value="F"></input></td>
+	   <td><textarea name="fale" id="fale" rows="1" cols="125" disable="true" ></textarea></td>
       </tr>
       <tr>
         <td><label for="email" id="lblEmail">E-mails pendentes de respostas:</label></td>
-        <td><input type="checkbox" name="email" id="email" value="E"></input></td>
-	   <td><textarea name="email" id="email" rows="1" cols="125"></textarea></td>
+        <td><input type="checkbox" name="email" id="emailCh" value="E"></input></td>
+	   <td><textarea name="email" id="email" rows="1" cols="125" disable="true"></textarea></td>
       </tr>
       <tr>
         <td><label for="cont" id="lblCont">Contestação pendente de resposta:</label></td>
-        <td><input type="checkbox" name="cont" id="cont" value="C"></input></td>
-	   <td><textarea name="cont" id="cont" rows="1" cols="125"></textarea></td>
+        <td><input type="checkbox" name="cont" id="contCh" value="C"></input></td>
+	   <td><textarea name="cont" id="cont" rows="1" cols="125" disable="true"></textarea></td>
       </tr>
       <tr>
         <td><label for="msf" id="lblMsf" >MSF enviado hoje?</label></td>
-        <td><input type="checkbox" name="msf" id="msf" value="M"></input></td>
-	   <td><select name="turnoMsf" id="turnoMsf">
+        <td><input type="checkbox" name="msf" id="msfCh" value="M"></input></td>
+	   <td><select name="turnoMsf" id="turnoMsf" disable="true">
 	   <option value=""> </option>
 	   <option value="M">No turno matutino</option>
 	   <option value="V">No turno vespertino</option>
@@ -172,7 +172,7 @@
       </tr>
       <tr>
         <td><label for="obs" id="lblObs" >Observações:</label></td>
-	     <td><input type="checkbox" name="obs" id="obs" value="O"></input></td>
+	     <!-- <td><input type="checkbox" name="obs" id="obsCh" value="O"></input></td> -->
         <td><textarea name="obs" id="obs" rows="3" cols="125"></textarea></td>
       </tr>
    </table>
