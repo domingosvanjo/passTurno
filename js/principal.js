@@ -107,15 +107,70 @@ function montaTag(tipo, id, min, maxlength, placeholder){
 
 var checkBoxA = document.querySelector("#autCh");
 var textAreaA = document.querySelector("#aut");
+var checkBoxF = document.querySelector("#faleCh");
+var textAreaF = document.querySelector("#fale");
+var checkBoxE = document.querySelector("#emailCh");
+var textAreaE = document.querySelector("#email");
+var checkBoxC = document.querySelector("#contCh");
+var textAreaC = document.querySelector("#cont");
+var checkBoxM = document.querySelector("#msfCh");
+var optM = document.querySelector("#msf");
 
 checkBoxA.addEventListener("click", function(){
-    if(checkBoxA){
+    if(checkBoxA.checked){
         textAreaA.disabled = false;
         textAreaA.placeholder = "Informe o assunto do e-mail aqui";
         textAreaA.requerid = true;
     }else{
         textAreaA.disabled = true;
         textAreaA.placeholder = "";
-        textAreaA.textContent = "";
+        textAreaA.value = "";
+    }
+})
+
+checkBoxF.addEventListener("click", function(){
+    if(checkBoxF.checked){
+        textAreaF.disabled = false;
+        textAreaF.placeholder = "Informe o assunto do e-mail e o número do ticket aqui";
+        textAreaF.requerid = true;
+    }else{
+        textAreaF.disabled = true;
+        textAreaF.placeholder = "";
+        textAreaF.value = "";
+    }
+})
+
+checkBoxE.addEventListener("click", function(){
+    if(checkBoxE.checked){
+        textAreaE.disabled = false;
+        textAreaE.placeholder = "Informe o assunto do e-mail e a justificativa da não resposta";
+        textAreaE.requerid = true;
+    }else{
+        textAreaE.disabled = true;
+        textAreaE.placeholder = "";
+        textAreaE.value = "";
+    }
+})
+
+checkBoxC.addEventListener("click", function(){
+    if(checkBoxC.checked){
+        textAreaC.disabled = false;
+        textAreaC.placeholder = "Informe o assunto do e-mail e a justificativa da não resposta";
+        textAreaC.requerid = true;
+    }else{
+        textAreaC.disabled = true;
+        textAreaC.placeholder = "";
+        textAreaC.value = "";
+    }
+})
+
+checkBoxM.addEventListener("click", function(){
+    if(checkBoxM.checked){
+        optM.disabled = false;
+        optM.requerid = true;
+    }else{
+        optM.disabled = true;
+        optM.placeholder = "";
+        optM.value = "";
     }
 })
