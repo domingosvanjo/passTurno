@@ -71,9 +71,9 @@
             <option value="V">T3</option>
             <option value="N">T4</option>
         </td>
-        <td><input type="number" id="dpr" min="0" max="50000"></input></td>
-        <td><input type="number" id="ahl" min="0" max="50000"></input></td>
-        <td><input type="number" id="ohd" min="0" max="50000"></input></td>
+        <td><input type="number" class="dpr" id="dpr" min="0" max="50000"></input></td>
+        <td><input type="number" class="ahlOhd" id="ahl" min="0" max="50000"></input></td>
+        <td><input type="number" class="ahlOhd" id="ohd" min="0" max="50000"></input></td>
              
         <td><input type="text" name="Qdx1" id="Qdx" maxlength="4" placeholder="voo"></input></td>
         <td><input type="text" name="Qdx2" id="Qdx" maxlength="4" placeholder="voo"></input></td>
@@ -94,9 +94,9 @@
       <tr class="centralizar">
          <td></td>
          <td></td>
-         <td><input type="number" id="dpr" min="0" max="50000"></input></td>
-         <td><input type="number" id="ahl" min="0" max="50000"></input></td>
-         <td><input type="number" id="ohd" min="0" max="50000"></input></td>
+         <td><input type="number" class="dpr" id="dpr" min="0" max="50000"></input></td>
+         <td><input type="number" class="ahlOhd" id="ahl" min="0" max="50000"></input></td>
+         <td><input type="number" class="ahlOhd" id="ohd" min="0" max="50000"></input></td>
                
          <td><input type="text" name="Qdx4" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
          <td><input type="text" name="Qdx5" id="Qdx" maxlength="4" placeholder="voo" required></input></td>
@@ -117,9 +117,9 @@
       <tr class="centralizar">
          <td><input type="text" disabled="true" class="oculto" placeholder="Clique duplo para excluir!"> </td>
          <!-- <td><img class="sMenos" id="sMenos" src="img/menos.png" alt="Sinal de remover" title="Remover linha."></td> -->
-         <td><input type="number" id="dpr" min="0" max="50000"></input></td>
-         <td><input type="number" id="ahl" min="0" max="50000"></input></td>
-         <td><input type="number" id="ohd" min="0" max="50000"></input></td>
+         <td><input type="number" class="dpr" id="dpr" min="0" max="50000"></input></td>
+         <td><input type="number" class="ahlOhd" id="ahl" min="0" max="50000"></input></td>
+         <td><input type="number" class="ahlOhd" id="ohd" min="0" max="50000"></input></td>
                
          <td><input type="text" name="Qdx4" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
          <td><input type="text" name="Qdx5" id="Qdx" maxlength="4" placeholder="voo" ></input></td>
@@ -142,27 +142,27 @@
 <fieldset>
    <table border="0">
       <tr>
-        <td><label for="aut" id="lblAut" >Autorização pendente da supervisão:</label></td>
+        <td><label for="autCh" id="lblAut" >Autorização pendente da supervisão:</label></td>
         <td><input type="checkbox" name="aut" id="autCh"></input></td>
 	   <td><textarea name="aut" id="aut" rows="1" cols="125" disabled="true"></textarea></td>
       </tr>
       <tr>
-        <td><label for="fale" id="lblFale">Fale pendente de resposta:</label></td>
+        <td><label for="faleCh" id="lblFale">Fale pendente de resposta:</label></td>
         <td><input type="checkbox" name="fale" id="faleCh"></input></td>
 	   <td><textarea name="fale" id="fale" rows="1" cols="125" disabled="true" ></textarea></td>
       </tr>
       <tr>
-        <td><label for="email" id="lblEmail">E-mails pendentes de respostas:</label></td>
+        <td><label for="emailCh" id="lblEmail">E-mails pendentes de respostas:</label></td>
         <td><input type="checkbox" name="email" id="emailCh"></input></td>
 	   <td><textarea name="email" id="email" rows="1" cols="125" disabled="true"></textarea></td>
       </tr>
       <tr>
-        <td><label for="cont" id="lblCont">Contestação pendente de resposta:</label></td>
+        <td><label for="contCh" id="lblCont">Contestação pendente de resposta:</label></td>
         <td><input type="checkbox" name="cont" id="contCh"></input></td>
 	   <td><textarea name="cont" id="cont" rows="1" cols="125" disabled="true"></textarea></td>
       </tr>
       <tr>
-        <td><label for="msf" id="lblMsf" >MSF enviado hoje?</label></td>
+        <td><label for="msfCh" id="lblMsf" >MSF enviado hoje?</label></td>
         <td><input type="checkbox" name="msf" id="msfCh"></input></td>
 	   <td><select name="turnoMsf" id="turnoMsf" disabled="true">
 	   <option value=""> </option>
@@ -172,7 +172,7 @@
       </tr>
       <tr>
         <td><label for="obs" id="lblObs" >Observações:</label></td>
-	     <td><input type="checkbox" name="obs" id="obsCh"></input></td>
+	     <td></td>
         <td><textarea name="obs" id="obs" rows="3" cols="125"></textarea></td>
       </tr>
    </table>
@@ -187,7 +187,7 @@
    <fieldset id="checklist">
    <table border="0">
       <tr class="rotuloAzul">
-         <td><h3>Check-list do dia</h3></td>
+         <td><h3>Check-list do turno</h3></td>
       </tr>
    </table>
 
@@ -238,7 +238,7 @@
          <td><input type="number" id="qtd8Corrig" min="0" max="30" value="0"></input></td>
       </tr>
       <tr>
-         <td><label for="qtd9">Quantas negadas(resolução 400)?:</label></td>
+         <td><label for="qtd9">Quantas negadas(resolução 400)?</label></td>
          <td><input type="number" id="qtd9" min="0" max="30" value="0"></input></td>
          <td><input type="number" id="qtd9Corrig" min="0" max="30" value="0"></input></td>
       </tr>
@@ -249,9 +249,9 @@
       </tr>
       <tr>
          <td><label for="qtd11">CXF lido e feito manutenção hoje?</label></td>
-         <td><select id="qtd11" name="qtd11" value="2">
-	 <option value="1">Sim</option>
-	 <option value="2">Não</option></td>
+         <td><select id="qtd11" name="qtd11">
+	 <option value="N">Não</option>
+	 <option value="S">Sim</option></td>
       </tr>
    </table>
 </fieldset>

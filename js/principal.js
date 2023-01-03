@@ -45,7 +45,6 @@ botaoAddLinha7.addEventListener("click", function(){
 
 
 function adicionarTr(){
-    linhas += 1;
     var linha = montarTr();
     var tabela = document.querySelector("#tab-pass");
     tabela.appendChild(linha);
@@ -57,9 +56,9 @@ function montarTr(){
 
     
     passTr.appendChild(montaTdInpOcul("text", "oculto", "tru", "Clique duplo para excluir!"));
-    passTr.appendChild(montarTd("number", "dpr", "0","50000", ""));
-    passTr.appendChild(montarTd("number", "ahl", "0","50000", ""));
-    passTr.appendChild(montarTd("number", "ohd", "0","50000", ""));
+    passTr.appendChild(montarTd("number", "dpr", "dpr", "0","50000", ""));
+    passTr.appendChild(montarTd("number", "ahlOhd", "ahl", "0","50000", ""));
+    passTr.appendChild(montarTd("number", "ahlOhd", "ohd", "0","50000", ""));
     passTr.appendChild(montarTd("text", "Qdx", "0","4", "voo"));
     passTr.appendChild(montarTd("text", "Qdx", "0", "4", "voo"));
     passTr.appendChild(montarTd("text", "Qdx", "0","4", "voo"));
@@ -87,17 +86,18 @@ function montaTdInpOcul(tipo, classe, disable, placeholder){
     return td;
 }
 
-function montarTd(tipo, id, min, maxlength, placeholder){
+function montarTd(tipo, classe, id, min, maxlength, placeholder){
     var td = document.createElement("td");
     
-    td.appendChild(montaTag(tipo, id, min, maxlength, placeholder));
+    td.appendChild(montaTag(tipo, classe, id, min, maxlength, placeholder));
     return td;
 }
 
-function montaTag(tipo, id, min, maxlength, placeholder){
+function montaTag(tipo, classe, id, min, maxlength, placeholder){
     var input = document.createElement("input");
     input.type = tipo;
     input.id = id;
+    input.classList.add(classe);
     input.min = min;
     input.max = maxlength;
     input.maxLength = maxlength;
@@ -114,7 +114,7 @@ var textAreaE = document.querySelector("#email");
 var checkBoxC = document.querySelector("#contCh");
 var textAreaC = document.querySelector("#cont");
 var checkBoxM = document.querySelector("#msfCh");
-var optM = document.querySelector("#msf");
+var optM = document.querySelector("#turnoMsf");
 
 checkBoxA.addEventListener("click", function(){
     if(checkBoxA.checked){
@@ -167,6 +167,7 @@ checkBoxC.addEventListener("click", function(){
 checkBoxM.addEventListener("click", function(){
     if(checkBoxM.checked){
         optM.disabled = false;
+        optM.value = "M"
         optM.requerid = true;
     }else{
         optM.disabled = true;
@@ -174,3 +175,24 @@ checkBoxM.addEventListener("click", function(){
         optM.value = "";
     }
 })
+
+var dprs = document.querySelectorAll(".dpr");
+var dpr = document.querySelector("#qtd5");
+var totDprs = 0;
+
+function somaDprs(){
+    for(var i = 0; i < dprs.length; i++){
+        if(dprs[i].value > 0 ){
+            totDprs ++;
+        }
+    }
+    dpr.value = totDprs;
+    alert(dprs.length);
+}
+
+var inputs = document.querySelectorAll('input');
+
+for (var i = 0; i <= inputs.length; i++) {
+  inputs[i].onblur = somaDprs;
+}
+

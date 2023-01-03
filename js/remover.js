@@ -11,8 +11,7 @@ botaoRemover.addEventListener("dblclick", function(event){
     
     setTimeout(function(){
         avoDoAlvo.remove();
-    },500);
-    linhas -= 1;
+    },250);
 })
 
 
