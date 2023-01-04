@@ -59,18 +59,18 @@ function montarTr(){
     passTr.appendChild(montarTd("number", "dpr", "dpr", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ahlOhd", "ahl", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ahlOhd", "ohd", "0","50000", ""));
-    passTr.appendChild(montarTd("text", "Qdx", "0","4", "voo"));
-    passTr.appendChild(montarTd("text", "Qdx", "0", "4", "voo"));
-    passTr.appendChild(montarTd("text", "Qdx", "0","4", "voo"));
-    passTr.appendChild(montarTd("text", "cttPen", "0","10", "Nenhum"));
-    passTr.appendChild(montarTd("text", "cttPen", "0","10", "Nenhum"));
-    passTr.appendChild(montarTd("text", "rush", "0","", "Nenhuma"));
-    passTr.appendChild(montarTd("text", "bags", "0","8", ""));
-    passTr.appendChild(montarTd("text", "bags", "0","8", ""));
-    passTr.appendChild(montarTd("text", "bdos", "0","10", "GYNLA12345"));
-    passTr.appendChild(montarTd("text", "bdos", "0","10", "GRULA12345"));
-    passTr.appendChild(montarTd("text", "ahls", "0","10", "Nenhuma"));
-    passTr.appendChild(montarTd("text", "ahls", "0","10", "Nenhuma"));
+    passTr.appendChild(montarTd("text", "Qdx","Qdx", "0","4", "voo"));
+    passTr.appendChild(montarTd("text", "Qdx", "Qdx","0", "4", "voo"));
+    passTr.appendChild(montarTd("text", "Qdx", "Qdx","0","4", "voo"));
+    passTr.appendChild(montarTd("text", "cttPen","cttPen", "0","10", "Nenhum"));
+    passTr.appendChild(montarTd("text", "cttPen", "cttPen","0","10", "Nenhum"));
+    passTr.appendChild(montarTd("text", "rush","rush", "0","", "Nenhuma"));
+    passTr.appendChild(montarTd("text", "bags", "bags","0","8", ""));
+    passTr.appendChild(montarTd("text", "bags", "bags","0","8", ""));
+    passTr.appendChild(montarTd("text", "bdos","bdos", "0","10", "GYNLA12345"));
+    passTr.appendChild(montarTd("text", "bdos", "bdos","0","10", "GRULA12345"));
+    passTr.appendChild(montarTd("text", "ahls", "ahls","0","10", "Nenhuma"));
+    passTr.appendChild(montarTd("text", "ahls", "ahls","0","10", "Nenhuma"));
 
     return passTr;
 }
@@ -181,18 +181,25 @@ var dpr = document.querySelector("#qtd5");
 var totDprs = 0;
 
 function somaDprs(){
+    var totDprs = 0;
     for(var i = 0; i < dprs.length; i++){
         if(dprs[i].value > 0 ){
             totDprs ++;
         }
     }
     dpr.value = totDprs;
-    alert(dprs.length);
+    
 }
 
-var inputs = document.querySelectorAll('input');
+var inputs = document.querySelector('input[type="number"]');
 
-for (var i = 0; i <= inputs.length; i++) {
-  inputs[i].onblur = somaDprs;
+
+
+     
+    inputs.addEventListener('blur', ()=>{
+        
+	    somaDprs();
+   	
+    });
 }
 
