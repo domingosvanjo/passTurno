@@ -43,11 +43,16 @@ botaoAddLinha7.addEventListener("click", function(){
     adicionarTr();
 })
 
+function adicionarTbody(){
+
+}
 
 function adicionarTr(){
     var linha = montarTr();
     var tabela = document.querySelector("#tab-pass");
-    tabela.appendChild(linha);
+    var tbody = document.querySelector("#body-pass");
+    tabela.appendChild(tbody);
+    tbody.appendChild(linha);
 }
 
 function montarTr(){
@@ -176,12 +181,14 @@ checkBoxM.addEventListener("click", function(){
     }
 })
 
-var dprs = document.querySelectorAll(".dpr");
+var dprs;
 var dpr = document.querySelector("#qtd5");
 var totDprs = 0;
 
 function somaDprs(){
+    dprs = document.querySelectorAll(".dpr");
     var totDprs = 0;
+    
     for(var i = 0; i < dprs.length; i++){
         if(dprs[i].value > 0 ){
             totDprs ++;
@@ -191,15 +198,19 @@ function somaDprs(){
     
 }
 
-var inputs = document.querySelector('input[type="number"]');
+var inputs = document.querySelectorAll('input[type="number"]');
 
 
-
-     
-    inputs.addEventListener('blur', ()=>{
+dprs = document.querySelectorAll(".dpr");
+    for(var n = 0; n < dprs.length; n++){
         
-	    somaDprs();
-   	
-    });
-}
+        dprs[n].addEventListener("blur", somaDprs, true)
+    }
+
+    // inputs.addEventListener('blur', ()=>{
+        
+	//     somaDprs();
+        
+    // });
+    
 
