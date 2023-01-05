@@ -15,21 +15,41 @@
          <img class="logo" src="img/logo.png" alt="Logo da LATAM">
          <h1>Passagem de turno GYNLL</h1>
       </div>
-      <div class="links">
-         <p><a href="https://docs.google.com/spreadsheets/d/19-5MNR8ZN8WDTIKY-DkpnG9eV-ZhGlsRlBASuXOQzKY/edit#gid=2491524">
-            Verificar as informações do 4DX dos voos </a></p>
-            <p><a href="https://datastudio.google.com/u/0/reporting/1hOK8pAFeOqtK8ECBkcahUjLAJ6QQPkUZ/page/Mv1k">
-              Painel de bagagens Priority</a></p>
-      </div>
+      
+         <table border="0">
+            <tbody>
+               <tr class="centralizar">
+                  <td><label for="data" id="lblData" >Data</label></td>
+                  <td><input type="date" id="data" required min="2023-01-01"></input></td>
+                  <td><label for="turno" id="lblTurno">Turno</label></td>
+                  <td><select name="turno" id="turno">
+                        <option value="M">T2</option>
+                        <option value="V">T3</option>
+                        <option value="N">T4</option>
+                  </td>
+                  <td><input type="text" class="oculto" disabled> </td>
+                  <td class="links">
+                     <p><a href="https://docs.google.com/spreadsheets/d/19-5MNR8ZN8WDTIKY-DkpnG9eV-ZhGlsRlBASuXOQzKY/edit#gid=2491524">
+                     Verificar as informações do 4DX dos voos </a></p>
+                  </td>
+                  <td> | </td>
+                  <td class="links">
+                     <p><a href="https://datastudio.google.com/u/0/reporting/1hOK8pAFeOqtK8ECBkcahUjLAJ6QQPkUZ/page/Mv1k">
+                     Painel de bagagens Priority</a></p>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      
    </header>
    
          
-   <fieldset>   
+   <fieldset id="fild1">   
      <table border="0">
          <tbody>
             <tr class="rotuloAzul">
-            <td><label for="data" id="lblData" >Data</label></td>
-            <td><label for="turno" id="lblTurno">Turno</label></td>
+            <!-- <td><label for="data" id="lblData" >Data</label></td>
+            <td><label for="turno" id="lblTurno">Turno</label></td> -->
             <td id="ribsTd" colspan="3">
                   <label for="ribs" id="lblRibs" >RIBs abertos no turno</label><br/>
                   <label for="dpr">DPR------</label>
@@ -66,12 +86,12 @@
             </tr>
 
             <tr class="centralizar">
-            <td><input type="date" id="data" required min="2022-01-01"></input></td>
+            <!-- <td><input type="date" id="data" required min="2022-01-01"></input></td>
             <td><select name="turno" id="turno">
                   <option value="M">T2</option>
                   <option value="V">T3</option>
                   <option value="N">T4</option>
-            </td>
+            </td> -->
             <td><input type="number" class="dpr" id="dpr" min="0" max="50000"></input></td>
             <td><input type="number" class="ahlOhd" id="ahl" min="0" max="50000"></input></td>
             <td><input type="number" class="ahlOhd" id="ohd" min="0" max="50000"></input></td>
@@ -93,8 +113,7 @@
             </tr>
          
             <tr class="centralizar">
-               <td></td>
-               <td></td>
+               
                <td><input type="number" class="dpr" id="dpr" min="0" max="50000"></input></td>
                <td><input type="number" class="ahlOhd" id="ahl" min="0" max="50000"></input></td>
                <td><input type="number" class="ahlOhd" id="ohd" min="0" max="50000"></input></td>
@@ -119,8 +138,8 @@
      <table id="tab-pass">
       <tbody id="body-pass">
          <tr class="centralizar">
-            <td><input type="text" disabled="true" class="oculto" placeholder="Clique duplo para excluir!"> </td>
-            <!-- <td><img class="sMenos" id="sMenos" src="img/menos.png" alt="Sinal de remover" title="Remover linha."></td> -->
+            <!-- <td><input type="text" disabled="true" class="oculto" placeholder="Clique duplo para excluir!"> </td> -->
+            
             <td><input type="number" class="dpr" id="dpr" min="0" max="50000"></input></td>
             <td><input type="number" class="ahlOhd" id="ahl" min="0" max="50000"></input></td>
             <td><input type="number" class="ahlOhd" id="ohd" min="0" max="50000"></input></td>
@@ -137,7 +156,7 @@
             <td><input type="text" name="bdos4" id="bdos" maxlength="10" placeholder="GRULA12345"></input></td>
             <td><input type="text" name="ahls3" id="ahls" maxlength="10" placeholder="Nenhuma"></input></td>
             <td><input type="text" name="ahls4" id="ahls" maxlength="10" placeholder="Nenhuma"></input></td>
-         
+            <td><img class="sMenos" id="sMenos" src="img/menos.png" alt="Sinal de remover" title="Remover linha."></td>
          </tr>
       </tbody>
    </table>
@@ -204,53 +223,53 @@
       </tr>
       <tr>
          <td><label for="qtd" id="qtd00"> (AHL e OHD) abertas hoje:</label></td>
-         <td><input type="number" id="qtd" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtdCorrig" min="0" max="30" value="0" disabled></input></td>
+         <td><input type="number" id="qtd" min="0" max="40" value="0" disabled></input></td>
+         <td><input type="number" id="qtdCorrig" min="0" max="30"  disabled></input></td>
       </tr>
       <tr>
          <td><label for="qtd2">Quantas tiveram comunicação proativa?</label></td>
-         <td><input type="number" id="qtd2" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd2Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd2" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd2Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd3">Quantas foram feitas com qualidade?</label></td>
-         <td><input type="number" id="qtd3" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd3Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd3" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd3Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd4">Qtd inserida na planilha de controle de RIBs?</label></td>
-         <td><input type="number" id="qtd4" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd4Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd4" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd4Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd5" id="qtd00">DPRs abertas hoje:</label></td>
-         <td><input type="number" id="qtd5" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtdCorrig" min="0" max="30" value="0" disabled></input></td>
+         <td><input type="number" id="qtd5" min="0" max="40" value="0" disabled></input></td>
+         <td><input type="number" id="qtdCorrig" min="0" max="40"  disabled></input></td>
       </tr>
       <tr>
          <td><label for="qtd6">Quantas aceitaram voucher?</label></td>
-         <td><input type="number" id="qtd6" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd6Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd6" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd6Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd7">Quantas estão em negociação?</label></td>
-         <td><input type="number" id="qtd7" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd7Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd7" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd7Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd8">Quantas derivadas?</label></td>
-         <td><input type="number" id="qtd8" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd8Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd8" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd8Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd9">Quantas negadas(resolução 400)?</label></td>
-         <td><input type="number" id="qtd9" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd9Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd9" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd9Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd10">QTD inserida na planilha de controle de RIBs:</label></td>
-         <td><input type="number" id="qtd10" min="0" max="30" value="0"></input></td>
-         <td><input type="number" id="qtd10Corrig" min="0" max="30" value="0"></input></td>
+         <td><input type="number" id="qtd10" min="0" max="40" value="0"></input></td>
+         <td><input type="number" id="qtd10Corrig" min="0" max="40" value="0"></input></td>
       </tr>
       <tr>
          <td><label for="qtd11">CXF lido e feito manutenção hoje?</label></td>

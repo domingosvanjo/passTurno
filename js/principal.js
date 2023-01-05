@@ -60,7 +60,8 @@ function montarTr(){
     passTr.classList.add("centralizar");
 
     
-    passTr.appendChild(montaTdInpOcul("text", "oculto", "tru", "Clique duplo para excluir!"));
+    //passTr.appendChild(montaTdInpOcul("text", "oculto", "tru", "Clique duplo para excluir!"));
+    
     passTr.appendChild(montarTd("number", "dpr", "dpr", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ahlOhd", "ahl", "0","50000", ""));
     passTr.appendChild(montarTd("number", "ahlOhd", "ohd", "0","50000", ""));
@@ -76,18 +77,20 @@ function montarTr(){
     passTr.appendChild(montarTd("text", "bdos", "bdos","0","10", "GRULA12345"));
     passTr.appendChild(montarTd("text", "ahls", "ahls","0","10", "Nenhuma"));
     passTr.appendChild(montarTd("text", "ahls", "ahls","0","10", "Nenhuma"));
-
+    passTr.appendChild(montarTdImg("sMenos", "sMenos", "img/menos.png", "Sinal de remover", "Remover linha."));
     return passTr;
 }
+//<td><img class="sMenos" id="sMenos" src="img/menos.png" alt="Sinal de remover" title="Remover linha."></td>
 
-function montaTdInpOcul(tipo, classe, disable, placeholder){
+function montarTdImg(classe, id, src, alt, title){
     var td = document.createElement("td");
-    var input = document.createElement("input");
-    input.classList.add(classe);
-    input.type = tipo;
-    input.disabled = disable;
-    input.placeholder = placeholder;
-    td.appendChild(input);
+    var img = document.createElement("img");
+    img.classList.add(classe);
+    img.id = id;
+    img.src = src;
+    img.alt = alt;
+    img.title = title;
+    td.appendChild(img);
     return td;
 }
 
@@ -182,15 +185,18 @@ checkBoxM.addEventListener("click", function(){
 })
 
 var dprs;
+var ahlsOhds;
 var dpr = document.querySelector("#qtd5");
+var ahlOhd = document.querySelector("#qtd");
 var totDprs = 0;
+var totAhlsOhds = 0;
 
 function somaDprs(){
     dprs = document.querySelectorAll(".dpr");
-    var totDprs = 0;
+    totDprs = 0;
     
     for(var i = 0; i < dprs.length; i++){
-        if(dprs[i].value > 0 ){
+        if(dprs[i].value > 13000 ){
             totDprs ++;
         }
     }
@@ -198,19 +204,24 @@ function somaDprs(){
     
 }
 
-var inputs = document.querySelectorAll('input[type="number"]');
+function somaAhlsOhds(){
+    ahlsOhds = document.querySelectorAll(".ahlOhd");
+    totAhlsOhds = 0;
 
-
-dprs = document.querySelectorAll(".dpr");
-    for(var n = 0; n < dprs.length; n++){
-        
-        dprs[n].addEventListener("blur", somaDprs, true)
+    for(var i = 0; i < ahlsOhds.length; i++){
+        if(ahlsOhds[i].value > 13000 ){
+            totAhlsOhds ++;
+        }
     }
+    ahlOhd.value = totAhlsOhds;
+}
 
-    // inputs.addEventListener('blur', ()=>{
-        
-	//     somaDprs();
-        
-    // });
-    
+var fild = document.querySelector("#fild1");
+
+fild.addEventListener('click', function(){
+    somaDprs();
+    somaAhlsOhds();
+});
+
+
 
