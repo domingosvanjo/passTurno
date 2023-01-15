@@ -11,7 +11,7 @@ function formatDate(date, format) {
     return format.replace(/mm|dd|aa|aaaa/gi, matched => map[matched])
 }
 
-dataAtual.value = formatDate(data, 'aa-0mm-0dd');
+dataAtual.value = formatDate(data, 'aa-0mm-dd');
 
 var botaoAddLinha1 = document.querySelector("#sMais1");
 var botaoAddLinha2 = document.querySelector("#sMais2");

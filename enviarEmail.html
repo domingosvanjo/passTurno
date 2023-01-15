@@ -162,27 +162,27 @@
    </table>
 </fieldset>
 
-<fieldset style='width: 1550px'>
+<fieldset>
    <table border="0">
       <tr>
         <td><label for="autCh" id="lblAut" >Autorização pendente da supervisão:</label></td>
         <td><input type="checkbox" name="aut" id="autCh"></input></td>
-	   <td><textarea name="aut" id="aut" rows="1" cols="148" disabled="true"></textarea></td>
+	   <td><textarea name="aut" id="aut" rows="1" cols="125" disabled="true"></textarea></td>
       </tr>
       <tr>
         <td><label for="faleCh" id="lblFale">Fale pendente de resposta:</label></td>
         <td><input type="checkbox" name="fale" id="faleCh"></input></td>
-	   <td><textarea name="fale" id="fale" rows="1" cols="148" disabled="true" ></textarea></td>
+	   <td><textarea name="fale" id="fale" rows="1" cols="125" disabled="true" ></textarea></td>
       </tr>
       <tr>
         <td><label for="emailCh" id="lblEmail">E-mails pendentes de respostas:</label></td>
         <td><input type="checkbox" name="email" id="emailCh"></input></td>
-	   <td><textarea name="email" id="email" rows="1" cols="148" disabled="true"></textarea></td>
+	   <td><textarea name="email" id="email" rows="1" cols="125" disabled="true"></textarea></td>
       </tr>
       <tr>
         <td><label for="contCh" id="lblCont">Contestação pendente de resposta:</label></td>
         <td><input type="checkbox" name="cont" id="contCh"></input></td>
-	   <td><textarea name="cont" id="cont" rows="1" cols="148" disabled="true"></textarea></td>
+	   <td><textarea name="cont" id="cont" rows="1" cols="125" disabled="true"></textarea></td>
       </tr>
       <tr>
         <td><label for="msfCh" id="lblMsf" >MSF enviado hoje?</label></td>
@@ -196,7 +196,7 @@
       <tr>
         <td><label for="obs" id="lblObs" >Observações:</label></td>
 	     <td></td>
-        <td><textarea name="obs" id="obs" rows="3" cols="148"></textarea></td>
+        <td><textarea name="obs" id="obs" rows="3" cols="125"></textarea></td>
       </tr>
    </table>
 
@@ -279,16 +279,11 @@
       </tr>
    </table>
 </fieldset>
-   <form method="post">
-      <input type='button' value='Enviar' onclick='sendEmail()' />
-   </form>
-   
+   <button onclick="sendMail(); return false">Enviar</button>
 
       <!-- <script src="enviodeemail.js"></script> -->
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
-      <script src="js/jquery.js"></script>
+     <script src="js/jquery.js"></script>
      <script src="js/principal.js"></script>
      <script src="js/remover.js"></script>
-     <script src="js/enviarEmail.js"></script>
 </body>
 </html>
