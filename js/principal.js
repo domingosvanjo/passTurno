@@ -55,29 +55,44 @@ function adicionarTr(){
     tbody.appendChild(linha);
 }
 
+var linhas = 3;
+var qdx = 9;
+var demais = 6;
+var rush = 3;
+
 function montarTr(){
     var passTr = document.createElement("tr");
     passTr.classList.add("centralizar");
-
+    linhas++;
+    qdx++;
+    demais++;
+    rush++;
     
-    //passTr.appendChild(montaTdInpOcul("text", "oculto", "tru", "Clique duplo para excluir!"));
-    
-    passTr.appendChild(montarTd("number", "dpr", "dpr", "0","50000", ""));
-    passTr.appendChild(montarTd("number", "ahlOhd", "ahl", "0","50000", ""));
-    passTr.appendChild(montarTd("number", "ahlOhd", "ohd", "0","50000", ""));
-    passTr.appendChild(montarTd("text", "Qdx","Qdx", "0","4", "voo"));
-    passTr.appendChild(montarTd("text", "Qdx", "Qdx","0", "4", "voo"));
-    passTr.appendChild(montarTd("text", "Qdx", "Qdx","0","4", "voo"));
-    passTr.appendChild(montarTd("text", "cttPen","cttPen", "0","10", "Nenhum"));
-    passTr.appendChild(montarTd("text", "cttPen", "cttPen","0","10", "Nenhum"));
-    passTr.appendChild(montarTd("text", "rush","rush", "0","", "Nenhuma"));
-    passTr.appendChild(montarTd("text", "bags", "bags","0","8", ""));
-    passTr.appendChild(montarTd("text", "bags", "bags","0","8", ""));
-    passTr.appendChild(montarTd("text", "bdos","bdos", "0","10", "GYNLA12345"));
-    passTr.appendChild(montarTd("text", "bdos", "bdos","0","10", "GRULA12345"));
-    passTr.appendChild(montarTd("text", "ahls", "ahls","0","10", "Nenhuma"));
-    passTr.appendChild(montarTd("text", "ahls", "ahls","0","10", "Nenhuma"));
-    passTr.appendChild(montarTdImg("sMenos", "sMenos", "img/menos.png", "Sinal de remover", "Remover linha."));
+    passTr.appendChild(montarTd("number", "dpr", "dpr" + linhas, "0","50000", ""));
+    passTr.appendChild(montarTd("number", "ahl", "ahl" + linhas, "0","50000", ""));
+    passTr.appendChild(montarTd("number", "ohd", "ohd" + linhas, "0","50000", ""));
+    passTr.appendChild(montarTd("text", "qdx","Qdx" + qdx, "0","4", "voo"));
+    qdx++;
+    passTr.appendChild(montarTd("text", "qdx", "Qdx" + qdx,"0", "4", "voo"));
+    qdx++;
+    passTr.appendChild(montarTd("text", "qdx", "Qdx" + qdx,"0","4", "voo"));
+    passTr.appendChild(montarTd("text", "cttPen","cttPen" + demais, "0","10", "Nenhum"));
+    demais++;
+    passTr.appendChild(montarTd("text", "cttPen", "cttPen" + demais,"0","10", "Nenhum"));
+    passTr.appendChild(montaTagTexAr("rush","rush" + rush, "1","20", "Nenhuma"));
+    demais = demais-1;
+    passTr.appendChild(montarTd("text", "bags", "bags" + demais,"0","8", ""));
+    demais++;
+    passTr.appendChild(montarTd("text", "bags", "bags" + demais,"0","8", ""));
+    demais = demais-1;
+    passTr.appendChild(montarTd("text", "bdos","bdos" + demais, "0","10", "GYNLA12345"));
+    demais++;
+    passTr.appendChild(montarTd("text", "bdos", "bdos" + demais,"0","10", "GRULA12345"));
+    demais = demais-1;
+    passTr.appendChild(montarTd("text", "ahls", "ahls" + demais,"0","10", "Nenhuma"));
+    demais++;
+    passTr.appendChild(montarTd("text", "ahls", "ahls" + demais,"0","10", "Nenhuma"));
+    passTr.appendChild(montarTdImg("sMenos", "sMenos", "img/menos.png", "Sinal de remover", "Remover linha"));
     return passTr;
 }
 //<td><img class="sMenos" id="sMenos" src="img/menos.png" alt="Sinal de remover" title="Remover linha."></td>
@@ -112,6 +127,19 @@ function montaTag(tipo, classe, id, min, maxlength, placeholder){
     input.placeholder = placeholder;
     return input;
 }
+
+function montaTagTexAr(classe, id, rows, cols, placeholder){
+    var td = document.createElement("td");
+    var input = document.createElement("textarea");
+    input.id = id;
+    input.classList.add(classe);
+    input.rows = rows;
+    input.cols = cols;
+    input.placeholder = placeholder;
+    td.appendChild(input);
+    return td;
+}
+
 
 var checkBoxA = document.querySelector("#autCh");
 var textAreaA = document.querySelector("#aut");
@@ -185,7 +213,8 @@ checkBoxM.addEventListener("click", function(){
 })
 
 var dprs;
-var ahlsOhds;
+var ahls;
+var ohds;
 var dpr = document.querySelector("#qtd5");
 var ahlOhd = document.querySelector("#qtd");
 var totDprs = 0;
@@ -205,14 +234,22 @@ function somaDprs(){
 }
 
 function somaAhlsOhds(){
-    ahlsOhds = document.querySelectorAll(".ahlOhd");
+    ahls = document.querySelectorAll(".ahl");
+    ohds = document.querySelectorAll(".ohd");
     totAhlsOhds = 0;
 
-    for(var i = 0; i < ahlsOhds.length; i++){
-        if(ahlsOhds[i].value > 13000 ){
+    for(var i = 0; i < ahls.length; i++){
+        if(ahls[i].value > 13000 ){
             totAhlsOhds ++;
         }
     }
+
+    for(var i = 0; i < ohds.length; i++){
+        if(ohds[i].value > 13000 ){
+            totAhlsOhds ++;
+        }
+    }
+
     ahlOhd.value = totAhlsOhds;
 }
 
@@ -224,4 +261,56 @@ fild.addEventListener('click', function(){
 });
 
 
+var enviar = document.querySelector('#enviar');
+var dataA = document.querySelector("#data");
+var turno = document.querySelector("#turno");
+var qdxs = document.querySelectorAll(".qdx");
+var cttPens = document.querySelectorAll(".cttPen");
+var rushs = document.querySelectorAll(".rush");
+var bags = document.querySelectorAll(".bags");
+var bdos = document.querySelectorAll(".bdos");
+var ahlss = document.querySelectorAll(".ahls");
+var T;
+var aut = document.querySelector("#aut");
+var fale = document.querySelector("#fale");
+var email = document.querySelector("#email");
+var cont = document.querySelector("#cont");
+var turnoMsf = document.querySelector("#turnoMsf");
+var tM = "";
+var obs = document.querySelector("#obs");
+var qRadios = document.querySelector("#qradios");
+var qCelular = document.querySelector("#qcelular");
+var qtdCk = document.querySelectorAll(".qtdCk");
+
+enviar.addEventListener('click', function(){
+    //enviar.disabled=true;
+    switch (turno.value){
+        case 'M':
+            T = 'T2';
+            break;
+        case 'V':
+            T = 'T3';
+            break;
+        case 'N':
+            T = 'T4';
+            break;
+    }
+    switch (turnoMsf.value){
+        case 'M':
+            tM = 'No turno matutino'
+            break;
+        case 'V':
+            tM = 'No turno vespertino'
+            break;
+        case 'N':
+            tM = 'No turno noturno'
+            break;
+    }
+
+    dprs = document.querySelectorAll(".dpr");
+    ahls = document.querySelectorAll(".ahl");
+    ohds = document.querySelectorAll(".ohd");
+    sendEmail();
+    
+})
 

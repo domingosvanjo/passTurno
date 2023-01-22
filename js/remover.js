@@ -15,6 +15,6 @@ botaoRemover.addEventListener("click", function(event){
             somaDprs();
             somaAhlsOhds();
         },250);
-      
+        linhas--;
     }
 });
