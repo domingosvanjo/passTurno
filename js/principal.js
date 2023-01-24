@@ -43,16 +43,27 @@ botaoAddLinha7.addEventListener("click", function(){
     adicionarTr();
 })
 
-function adicionarTbody(){
-
-}
-
 function adicionarTr(){
     var linha = montarTr();
     var tabela = document.querySelector("#tab-pass");
     var tbody = document.querySelector("#body-pass");
     tabela.appendChild(tbody);
     tbody.appendChild(linha);
+    part1.push(p1);
+    part2.push(p2);
+    part3.push(p3);
+    part4.push(p4);
+    part5.push(p5);
+    part6.push(p6);
+    part7.push(p7);
+    part8.push(p8);
+    part9.push(p9);
+    part10.push(p10);
+    part11.push(p11);
+    part12.push(p12);
+    part13.push(p13);
+    part14.push(p14);
+    part15.push(p15);
 }
 
 var linhas = 3;
@@ -281,6 +292,36 @@ var obs = document.querySelector("#obs");
 var qRadios = document.querySelector("#qradios");
 var qCelular = document.querySelector("#qcelular");
 var qtdCk = document.querySelectorAll(".qtdCk");
+var p1 = "<tr class='centralizar' style='text-align-last: center'><td><input type='number' class='dpr' id='dpr' style='border-radius: 4px; padding: 5px; width: 60px; border-width: 1px;' value=";
+var p2 = "></input></td><td><input type='number' class='ahlOhd' id='ahl' style='border-radius: 4px; padding: 5px; width: 60px; border-width: 1px;' value=";
+var p3 = "></input></td><td><input type='number' class='ahlOhd' id='ohd' style='border-radius: 4px; padding: 5px; width: 60px; border-width: 1px;' value=";
+var p4 = "></input></td><td><input type='text' name='Qdx4' id='Qdx' style='border-radius: 4px; padding: 5px; width: 35px; border-width: 1px;' value=";
+var p5 = "></input></td><td><input type='text' name='Qdx5' id='Qdx' style='border-radius: 4px; padding: 5px; width: 35px; border-width: 1px;' value=";
+var p6 = "></input></td><td><input type='text' name='Qdx6' id='Qdx'  style='border-radius: 4px; padding: 5px; width: 35px; border-width: 1px;' value=";
+var p7 = "></input></td><td><input type='text' name='cttPen3' id='cttPen' style='border-radius: 4px; padding: 5px; width: 90px; border-width: 1px;' value=";
+var p8 = "></input></td><td><input type='text' name='cttPen4' id='cttPen' style='border-radius: 4px; padding: 5px; width: 90px; border-width: 1px;' value=";
+var p9 = "></input></td><td><textarea name='rush' id='rush' style='border-radius: 4px; padding: 5px' rows='1' cols='20'>";
+var p10 = "</textarea></td><td><input type='text' name='bags3' id='bags' style='border-radius: 4px; padding: 5px; width: 75px; border-width: 1px;' value=";
+var p11 = "></input></td><td><input type='text' name='bags4' id='bags' style='border-radius: 4px; padding: 5px; width: 75px; border-width: 1px;' value=";
+var p12 = "></input></td><td><input type='text' name='bdos3' id='bdos' style='border-radius: 4px; padding: 5px; width: 90px; border-width: 1px;' value=";
+var p13 = "></input></td><td><input type='text' name='bdos4' id='bdos' style='border-radius: 4px; padding: 5px; width: 90px; border-width: 1px;' value=";
+var p14 = "></input></td><td><input type='text' name='ahls3' id='ahls' style='border-radius: 4px; padding: 5px; width: 90px; border-width: 1px;' value=";
+var p15 = "></input></td><td><input type='text' name='ahls4' id='ahls' style='border-radius: 4px; padding: 5px; width: 90px; border-width: 1px;' value=";
+var part1 = [p1];
+var part2 = [p2];
+var part3 = [p3];
+var part4 = [p4];
+var part5 = [p5];
+var part6 = [p6];
+var part7 = [p7];
+var part8 = [p8];
+var part9 = [p9];
+var part10 = [p10];
+var part11 = [p11];
+var part12 = [p12];
+var part13 = [p13];
+var part14 = [p14];
+var part15 = [p15];
 
 enviar.addEventListener('click', function(){
     //enviar.disabled=true;
@@ -310,7 +351,18 @@ enviar.addEventListener('click', function(){
     dprs = document.querySelectorAll(".dpr");
     ahls = document.querySelectorAll(".ahl");
     ohds = document.querySelectorAll(".ohd");
-    sendEmail();
-    
+    //sendEmail();
+    alert(linExtras());
 })
 
+function linExtras(){
+    var htmlExt;
+
+    for(var i = 2; i < dprs.length; i++){
+        if (part1.length > 0){
+            htmlExt = part1[i-2] + dprs[i].value + part2[i-2] + ahls[i].value + part3[i-2] + ohds[i].value + part4[i-2] + qdxs[i+4].value + part5[i-2] + qdxs[i+5].value + part6[i-2] + qdxs[i+6].value + part7[i-2] + cttPens[i+2].value + part8[i-2] + cttPens[i+3].value + part9[i-2] + rushs[i].value + part10[i-2] + bags[i+2].value + part11[i-2] + bags[i+3].value + part12[i-2] + bdos[i+2].value + part13[i-2] + bdos[i+3].value + part14[i-2] + ahlss[i+2].value + part15[i-2] + ahlss[i+3].value;
+            alert(i);
+        }
+    }
+    return htmlExt;
+}
