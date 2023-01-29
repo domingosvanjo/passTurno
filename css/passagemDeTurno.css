@@ -20,6 +20,12 @@
     background-color:cornflowerblue; text-align: center;
 }
 
+.chk{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
 h1{
     
     color: blueviolet;
@@ -76,15 +82,11 @@ h3{
     text-align: center; color: whitesmoke; width: 535px;
 }
 
-.qtdCk{
-    width: 65px;
-}
-
 #qtd00, #qtd5, #qtd{
     font-weight: bold; font-style: italic; font-size: 12pt; text-align: center; border-color: transparent;
 }
-#qtd2,#qtd2Corrig,#qtd3,#qtd3Corrig,#qtd4,#qtd4Corrig,#qtd6,#qtd6Corrig,#qtd7,#qtd7Corrig,#qtd8,#qtd8Corrig,#qtd9,#qtd9Corrig,#qtd10,#qtd10Corrig,#qtdCorrig{
-    text-align: center; border-color: transparent;
+.qtdCk{
+    text-align: center; border-color: transparent; width: 65px;
 }
 #qtd11{
     border-color: transparent;
@@ -100,6 +102,11 @@ p{
 	opacity: 0.5;
 	transition: 0.5s;
 }
+
+.erro{
+    border-color: red;
+}
+
 
 #enviar{
     width: 150px;
