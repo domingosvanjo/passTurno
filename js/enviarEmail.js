@@ -2,7 +2,7 @@
 function sendEmail() {
   alert('Teste de e-mail');
   Email.send({
-    header(header: 'Access-Control-Origin: https://domingosvanjo.github.io'),
+    //header(header: 'Access-Control-Origin: https://domingosvanjo.github.io'),
     SecureToken : "84fbdc95-58e0-48dc-ac15-21d075f52f66",
     To : "bagagem.gynll@tam.com.br",
     From : "domingos.cavalcante@latam.com",
